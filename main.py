@@ -10,8 +10,10 @@ from sklearn.metrics import confusion_matrix
 
 
 def load_data():
+
     global features, labels
-    df = pd.read_csv("C:\\Users\\micpo\\Downloads\\parkinsons.data")
+    # załadowanie danych i
+    df = pd.read_csv("parkinsons.data")
     pd.set_option('expand_frame_repr', False)
     features = df.loc[:, df.columns != 'status'].values[:, 1:]
     labels = df.loc[:, 'status'].values
